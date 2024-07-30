@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Rating</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Edit Rating</h2>
+        <p><b>Current Book Details: {{ book_detail["title"] }} by {{ book_detail["author"] }} - Rating: {{ book_detail["rating"] }}</b></p>
+        <hr>
+        <form action="{{ url_for('edit_rating', id=id) }}" method="POST">
+            <input type="hidden" name="id" value="{{ id }}">
+            <div class="form-group">
+                <label for="new_rating">New Rating</label>
+                <input id="new_rating" name="new_rating" type="text" class="form-control" placeholder="Enter new rating" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Change Rating</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
